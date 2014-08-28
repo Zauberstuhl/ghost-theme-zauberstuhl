@@ -21,19 +21,19 @@
 
 /* Import the font file with the icons in it */
 @font-face {
-    font-family: 'icons';
-    src:url('../fonts/icons.eot');
-    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/icons.woff') format('woff'),
-        url('../fonts/icons.ttf') format('truetype'),
-        url('../fonts/icons.svg#icons') format('svg');
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?ob2zua');
+    src:url('../fonts/icomoon.eot?#iefixob2zua') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?ob2zua') format('woff'),
+        url('../fonts/icomoon.ttf?ob2zua') format('truetype'),
+        url('../fonts/icomoon.svg?ob2zua#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 /* Apply these base styles to all icons */
-.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
-    font-family: 'icons';
+.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook, .icon-diaspora {
+    font-family: 'icomoon';
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -62,7 +62,9 @@
 .icon-facebook:before {
     content: "\e004";
 }
-
+.icon-diaspora:before {
+		content: "\e005";
+}
 
 /* ==========================================================================
    1. General - Setting up some base styles
@@ -566,6 +568,14 @@ table.plain {
     margin-right: 180px;
 }
 
+.author-thumb {
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-right: 9px;
+    border-radius: 100%;
+}
+
 /* Drop the share links in the space to the right.
    Doing it like this means it's easier for the author bio
    to be flexible at smaller screen sizes while the share
@@ -574,7 +584,7 @@ table.plain {
     position: absolute;
     top: 4rem;
     right: 0;
-    width: 140px;
+    width: 150px;
 }
 
 .post-footer .share a {

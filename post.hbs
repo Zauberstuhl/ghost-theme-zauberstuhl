@@ -28,8 +28,9 @@
             {{/if}}
 
             <section class="share">
-                <a href="javascript:;" onclick="window.open('http://sharetodiaspora.github.io/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'das','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=550'); return false;" rel="nofollow" target="_blank">
-                    <img src="http://sharetodiaspora.github.io/favicon.png" style="border: 0px solid;" />
+                <a class="icon-diaspora" href="http://sharetodiaspora.github.io/"
+                    onclick="window.open(this.href + '?url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title), 'das' ,'width=620,height=550'); return false;">
+										<span class="hidden">Diaspora</span>
                 </a>
                 <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
