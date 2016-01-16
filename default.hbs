@@ -2,71 +2,69 @@
 <html>
 <head>
     {{! Document Settings }}
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
-
     <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" type="text/css" href="{{asset "css/highlight/styles/default.css"}}">
-    <script type="text/javascript" src="{{asset "css/highlight/highlight.pack.js"}}"></script>
 
-    {{! Styles'n'Scripts }}
+    <link rel="shortcut icon" href="{{asset "/icons/favicon.ico"}}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{{asset "icons/apple-touch-icon.png"}}" />
+	<link rel="apple-touch-icon" sizes="57x57" href="{{asset "icons/apple-touch-icon-57x57.png"}}" />
+	<link rel="apple-touch-icon" sizes="72x72" href="{{asset "icons/apple-touch-icon-72x72.png"}}" />
+	<link rel="apple-touch-icon" sizes="76x76" href="{{asset "icons/apple-touch-icon-76x76.png"}}" />
+	<link rel="apple-touch-icon" sizes="114x114" href="{{asset "icons/apple-touch-icon-114x114.png"}}" />
+	<link rel="apple-touch-icon" sizes="120x120" href="{{asset "icons/apple-touch-icon-120x120.png"}}" />
+	<link rel="apple-touch-icon" sizes="144x144" href="{{asset "icons/apple-touch-icon-144x144.png"}}" />
+	<link rel="apple-touch-icon" sizes="152x152" href="{{asset "icons/apple-touch-icon-152x152.png"}}" />
+
+	{{! Styles and Fonts }}
+		<link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/icomoon.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    
-
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,700,100italic,300italic,700italic|Source+Code+Pro:300,400,500,700|Bree+Serif' rel='stylesheet' type='text/css'>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-
-    {{! Modified: The big featured header on the homepage, with the site logo and description }}
-    <header id="site-head">
-        <div class="vertical">
-            <div id="site-head-content">
-
-                <div class="blog-title-wrap"><div class="inner">
-                {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-                <h1 class="blog-title"><a href="{{@blog.url}}" style="color: rgb(51, 51, 51);">{{@blog.title}}</a></h1>
-                </div></div>
-
-                <div class="blog-description-wrap"><div class="inner">
-                <h2 class="blog-description">{{@blog.description}}</h2>
-                </div></div>
-
-            </div>
-        </div>
-    </header>
+	<header class="main-header">
+		<div class="main-header-content">
+			<h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+			<h2 class="blog-description">{{@blog.description}}</h2>
+		</div>
+		
+		{{! Optional navigation menu }}
+		
+		{{!
+		<nav class="main-nav">
+			<a href="/">Blog</a>
+			<a href="/about">About</a>
+			<a href="/contact">Contact</a>
+		</nav>
+		}}
+		
+	</header>
 
     {{! Everything else gets inserted here }}
     {{{body}}}
-
-    <footer class="site-footer inner">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2014 &bull; All rights reserved.</section>
-        </div>
+    
+		<footer class="site-footer">
+			<section class="diaspora"><a class="icon-diaspora" href="https://sechat.org/u/lukas"> Diaspora</a></section>
+    	<section class="github"><a class="icon-github" href="https://github.com/zauberstuhl"> GitHub</a></section>
+    	<section class="mail"><a class="icon-mail" href="mailto:lukas@zauberstuhl.de"> lukas@zauberstuhl.de</a></section>
+    	<section class="rss"><a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/"> RSS Feed</a></section>
+    	<section class="twitter"><a class="icon-twitter" href="http://twitter.com/zauberstuhl"> @zauberstuhl</a></section>
+      <section class="copyright">&copy; {{date format="YYYY"}} {{@blog.title}}</section>
     </footer>
 
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+		{{ghost_foot}}
 
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    {{! Mathjax configuration}}
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    <script type="text/x-mathjax-config">  
-        MathJax.Hub.Config({  
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-        });
-    </script>  
+		{{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 </body>
 </html>
